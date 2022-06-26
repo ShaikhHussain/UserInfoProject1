@@ -1,0 +1,380 @@
+scrUserInfoAdd As screen:
+    ImagePosition: =ImagePosition.Fill
+
+    frmEmployeeDetails As form:
+        BorderThickness: =1
+        DataSource: ='Employee Information'
+        DefaultMode: =FormMode.New
+        Height: =430
+        NumberOfColumns: =1
+        Width: =1283
+        X: =45
+        Y: =135
+        ZIndex: =1
+
+        Name_DataCard1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Name"
+            Default: =ThisItem.Name
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Employee Information'],DataSourceInfo.DisplayName,"Name")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =86
+            Required: =false
+            Update: =txtName.Selected
+            Width: =1283
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+            DataCardKey1 As label:
+                Height: =50
+                Size: =20
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (txtName.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            txtName As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                Items: =Choices([@'Employee Information'].Name)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices('Employee Information'.Name,txtName.SearchText)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey1.X + DataCardKey1.Width
+                Y: =10
+                ZIndex: =2
+
+            StarVisible1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey1.Y
+                ZIndex: =4
+
+        DOB_DataCard1 As typedDataCard.dateEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="DOB"
+            Default: =ThisItem.DOB
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Employee Information'],DataSourceInfo.DisplayName,"DOB")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =90
+            Required: =false
+            Update: =txtDOB.SelectedDate
+            Width: =1283
+            X: =0
+            Y: =1
+            ZIndex: =2
+
+            DataCardKey3 As label:
+                Height: =60
+                Size: =20
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (txtDOB.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            txtDOB As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultDate: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                Height: =50
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey3.X + DataCardKey3.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =txtDOB.Y + txtDOB.Height
+                ZIndex: =3
+
+            StarVisible3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey3.Y
+                ZIndex: =4
+
+        DOJ_DataCard1 As typedDataCard.dateEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="DOJ"
+            Default: =ThisItem.DOJ
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Employee Information'],DataSourceInfo.DisplayName,"DOJ")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =90
+            Required: =false
+            Update: =txtDOJ.SelectedDate
+            Width: =1283
+            X: =0
+            Y: =2
+            ZIndex: =2
+
+            DataCardKey4 As label:
+                Height: =50
+                Size: =20
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (txtDOJ.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            txtDOJ As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultDate: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                Height: =50
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey4.X + DataCardKey4.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage4 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =txtDOJ.Y + txtDOJ.Height
+                ZIndex: =3
+
+            StarVisible4 As label:
+                Align: =Align.Center
+                Height: =DataCardKey4.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey4.Y
+                ZIndex: =4
+
+        "'Employee ID_DataCard1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="EmployeeID"
+            Default: =ThisItem.'Employee ID'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Employee Information'],DataSourceInfo.DisplayName,"EmployeeID")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =83
+            MaxLength: =DataSourceInfo([@'Employee Information'], DataSourceInfo.MaxLength, "EmployeeID")
+            Required: =false
+            Update: =txtEmployeeId.Text
+            Width: =1283
+            X: =0
+            Y: =3
+            ZIndex: =2
+
+            DataCardKey2 As label:
+                Height: =48
+                Size: =20
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =29
+                Y: =6
+                ZIndex: =1
+
+            txtEmployeeId As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =50
+                LineHeight: =
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =519
+                Y: =4
+                ZIndex: =2
+
+            ErrorMessage2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =txtEmployeeId.Y + txtEmployeeId.Height
+                ZIndex: =3
+
+            StarVisible2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey2.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey2.Y
+                ZIndex: =4
+
+    btnSubmit As button:
+        Height: =52
+        OnSelect: |-
+            =Patch('Employee Information',
+            Defaults('Employee Information'),
+            {
+                Title:"MR/MRs",
+                Name:txtName.Selected,
+                Designation:txtDesignation.Selected.Value,
+                DOB:txtDOB.SelectedDate,
+                DOJ:txtDOJ.SelectedDate,
+                'Employee ID':txtEmployeeId.Text
+            }
+            );
+            
+            Notify("Record has been saved successfully completed", NotificationType.Success);
+            
+            ResetForm(frmEmployeeDetails);
+            
+            Navigate(scrUserInfoView);
+        Text: ="Submit"
+        Width: =200
+        X: =64
+        Y: =605
+        ZIndex: =3
+
+    btnUpdate As button:
+        Height: =52
+        OnSelect: |-
+            =Patch('Employee Information',
+            
+            First(Filter('Employee Information', 'Employee ID' =txtEmployeeId.Text )),
+            
+            {
+                 Title:"MR/MRs",
+                Name:txtName.Selected,
+                Designation:txtDesignation.Selected.Value,
+                DOB:txtDOB.SelectedDate,
+                DOJ:txtDOJ.SelectedDate,
+                'Employee ID':txtEmployeeId.Text
+            }
+            );
+            
+            Notify("Record has been updated successfully", NotificationType.Success);
+            
+            ResetForm(frmEmployeeDetails);
+            
+            Navigate(scrUserInfoView);
+        Text: ="Update"
+        Width: =200
+        X: =406
+        Y: =605
+        ZIndex: =4
+
+    btnReset As button:
+        Height: =52
+        OnSelect: =ResetForm(frmEmployeeDetails);
+        Text: ="Reset"
+        Width: =200
+        X: =1083
+        Y: =605
+        ZIndex: =5
+
+    Delete As button:
+        Height: =53
+        OnSelect: |-
+            =Remove('Employee Information',
+            First(Filter('Employee Information', 'Employee ID'=txtEmployeeId.Text))
+            );
+            
+            Notify("Record has been deleted successfully", NotificationType.Success);
+            
+            ResetForm(frmEmployeeDetails);
+            
+            Navigate(scrUserInfoView);
+        Text: ="Delete"
+        Width: =200
+        X: =736
+        Y: =604
+        ZIndex: =6
+
+    txtDesignation As combobox:
+        DisplayFields: =["Value"]
+        Height: =52
+        IsSearchable: =false
+        Items: =["Developer", "Tester", "Lead", "Manager"]
+        Reset: =btnReset.Pressed
+        SearchFields: =["Value"]
+        SearchItems: =[]
+        Width: =730
+        X: =568
+        Y: =496
+        ZIndex: =9
+
+    Label2 As label:
+        Size: =20
+        Text: ="Designation"
+        Width: =215
+        X: =64
+        Y: =508
+        ZIndex: =10
+
+    cmpHeader_1 As cmpHeader:
+        Width: =1366
+        ZIndex: =11
+
+    cmpFooter_1 As cmpFooter:
+        X: =1
+        Y: =698
+        ZIndex: =12
+

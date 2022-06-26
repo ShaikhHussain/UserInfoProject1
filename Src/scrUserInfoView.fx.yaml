@@ -1,0 +1,99 @@
+scrUserInfoView As screen:
+
+    cmpHeader_2 As cmpHeader:
+        Width: =1366
+        ZIndex: =2
+
+    cmpFooter_2 As cmpFooter:
+        X: =1
+        Y: =698
+        ZIndex: =3
+
+    dtEmployeeInfo As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =483
+        Items: ='Employee Information'
+        Width: =1267
+        X: =56
+        Y: =182
+        ZIndex: =4
+
+        Name_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Name"
+            FieldName: ="Name"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.Name.DisplayName
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        "'Employee ID_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Employee ID"
+            FieldName: ="EmployeeID"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.'Employee ID'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        DOB_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="DOB"
+            FieldName: ="DOB"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.DOB
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        DOJ_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="DOJ"
+            FieldName: ="DOJ"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.DOJ
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        Designation_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Designation"
+            FieldName: ="Designation"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =ThisItem.Designation
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+    Icon1 As icon.Person:
+        Icon: =Icon.Person
+        OnSelect: =Navigate(scrUserInfoAdd)
+        X: =1246
+        Y: =118
+        ZIndex: =5
+

@@ -1,0 +1,190 @@
+scrUserGallary As screen:
+
+    glryUserDetails As gallery.galleryVertical:
+        Height: =135
+        Items: ='Employee Information'
+        Layout: =Layout.Vertical
+        TemplateSize: =61
+        Width: =1259
+        X: =54
+        Y: =265
+        ZIndex: =1
+
+        Label11 As label:
+            Height: =47
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.Title
+            Width: =182
+            X: =26
+            Y: =8
+            ZIndex: =1
+
+        Label12 As label:
+            Height: =45
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.Name.DisplayName
+            Width: =207
+            X: =178
+            Y: =11
+            ZIndex: =2
+
+        Label13 As label:
+            Height: =45
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.'Employee ID'
+            Width: =206
+            X: =397
+            Y: =11
+            ZIndex: =3
+
+        Label14 As label:
+            Height: =45
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.DOB
+            Width: =206
+            X: =542
+            Y: =11
+            ZIndex: =4
+
+        Label15 As label:
+            Height: =45
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.DOJ
+            Width: =206
+            X: =732
+            Y: =8
+            ZIndex: =5
+
+        Label16 As label:
+            Height: =45
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.Designation
+            Width: =206
+            X: =904
+            Y: =8
+            ZIndex: =6
+
+        Icon5 As icon.Edit:
+            Height: =45
+            Icon: =Icon.Edit
+            OnSelect: |-
+                =Set(varGblID,glryUserDetails.Selected.ID);
+                
+                Navigate(scrUserEdit,ScreenTransition.CoverRight,{varLoclID:glryUserDetails.Selected.ID});
+            X: =1110
+            Y: =8
+            ZIndex: =7
+
+        Icon6 As icon.Trash:
+            Height: =45
+            Icon: =Icon.Trash
+            OnSelect: =Select(Parent)
+            X: =1174
+            Y: =8
+            ZIndex: =8
+
+    Label17 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =55
+        Size: =20
+        Text: ="Title"
+        Width: =236
+        X: =54
+        Y: =192
+        ZIndex: =2
+
+    Label18 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =55
+        Size: =20
+        Text: ="Name"
+        Width: =178
+        X: =280
+        Y: =192
+        ZIndex: =3
+
+    Label19 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =55
+        Size: =20
+        Text: ="Emp ID"
+        Width: =177
+        X: =443
+        Y: =192
+        ZIndex: =4
+
+    Label20 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =55
+        Size: =20
+        Text: ="DOB"
+        Width: =177
+        X: =618
+        Y: =192
+        ZIndex: =5
+
+    Label21 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =55
+        Size: =20
+        Text: ="DOJ"
+        Width: =177
+        X: =789
+        Y: =192
+        ZIndex: =6
+
+    Label22 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =55
+        Size: =20
+        Text: ="Designation"
+        Width: =199
+        X: =952
+        Y: =192
+        ZIndex: =7
+
+    Label23 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =55
+        Size: =20
+        Text: ="Action"
+        Width: =177
+        X: =1136
+        Y: =192
+        ZIndex: =8
+
+    cmpHeader_3 As cmpHeader:
+        Width: =1366
+        ZIndex: =9
+
+    cmpFooter_3 As cmpFooter:
+        Y: =698
+        ZIndex: =10
+

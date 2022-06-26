@@ -1,0 +1,30 @@
+{
+  "023978f0-fde9-466b-a81e-a9470cc38738": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1578/1.0.1578.2813/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://realshaikh.sharepoint.com/sites/HRDepartment": {
+        "dataSources": {
+          "Employee Information": {
+            "tableName": "fa0529c1-8a64-4540-b3fb-05eeda1db707"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Employee Information"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "023978f0-fde9-466b-a81e-a9470cc38738"
+  }
+}
