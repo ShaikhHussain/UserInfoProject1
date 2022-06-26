@@ -352,7 +352,7 @@ scrUserInfoAdd As screen:
         DisplayFields: =["Value"]
         Height: =52
         IsSearchable: =false
-        Items: =["Developer", "Tester", "Lead", "Manager"]
+        Items: =["Developer", "Tester", "Lead", "Manager","Project Head"]
         Reset: =btnReset.Pressed
         SearchFields: =["Value"]
         SearchItems: =[]
